@@ -1,1 +1,5 @@
 # Custom configuration file
+
+# Aliases
+alias reposync='repo sync --force-sync -f --no-clone-bundle -c --no-tags -j 4'
+alias dd='dd status=progress'
