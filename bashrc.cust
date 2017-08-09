@@ -25,3 +25,15 @@ export USE_CCACHE=1
 alias la='ls -A'
 alias dd='dd status=progress'
 alias reposync='repo sync --force-sync -f --no-clone-bundle -c --no-tags -j 4'
+
+
+# Functions
+function prepare-build-environment {
+	if [[ $1 == candy ]]; then
+		export CANDY_BUILD_TYPE=OFFICIAL
+	elif [[ $1 == xenonhd ]]; then
+		export OTA_TYPE=Official
+	else
+		echo "ERROR: Invalid argument!"
+	fi
+}
