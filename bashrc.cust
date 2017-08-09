@@ -37,3 +37,23 @@ function prepare-build-environment {
 		echo "ERROR: Invalid argument!"
 	fi
 }
+
+function gerrit-push {
+	if [[ $1 == candy ]]; then
+		if [ $2 ]; then
+			branch=$2
+		else
+			branch=c7.1.2
+		fi
+		git push ssh://axxx007xxxz@gerrit.bbqdroid.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
+	elif [[ $1 == xosp ]]; then
+		if [ $2 ]; then
+			branch=$2
+		else
+			branch=xosp-n
+		fi
+		git push ssh://axxx007xxxz@review.xosp.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
+	else
+		echo "ERROR: Invalid argument!"
+	fi
+}
