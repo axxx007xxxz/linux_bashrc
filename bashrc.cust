@@ -22,5 +22,6 @@ export USE_CCACHE=1
 
 
 # Aliases
+alias la='ls -A'
 alias reposync='repo sync --force-sync -f --no-clone-bundle -c --no-tags -j 4'
 alias dd='dd status=progress'
