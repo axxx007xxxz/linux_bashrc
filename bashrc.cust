@@ -18,6 +18,7 @@ man() {
 
 
 # Variables
+export GROFF_NO_SGR=1
 export USE_CCACHE=1
 
 
