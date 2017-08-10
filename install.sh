@@ -4,7 +4,7 @@ if [ $(whoami) != root ]; then
 	exit
 fi
 
-echo "WARNING: This script is supposed to be used on Fedora."
+echo "WARNING: This script is supposed to be used on Fedora only."
 echo "Pressing CTRL+C within three seconds will abort installation."
 sleep 3
 
