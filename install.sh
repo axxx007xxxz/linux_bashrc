@@ -10,3 +10,4 @@ sleep 3
 
 cp bashrc /etc/bashrc && chmod 644 /etc/bashrc
 cp bashrc.cust /etc/bashrc.cust && chmod 644 /etc/bashrc.cust
+echo "Done."
