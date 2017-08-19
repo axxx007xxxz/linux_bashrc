@@ -58,3 +58,13 @@ function gerrit-push {
 		echo "ERROR: Invalid argument!"
 	fi
 }
+
+function upload-afh {
+	username=axxx007xxxz
+	password=thisisnotmypassword
+	if [ ! $1 ]; then
+		echo "ERROR: Invalid argument!"
+		exit
+	fi
+	curl -u $username:$password -T $1 ftp://uploads.androidfilehost.com
+}
