@@ -35,7 +35,7 @@ function prepare-build-environment {
 	elif [[ $1 == xenonhd ]]; then
 		export OTA_TYPE=Official
 	else
-		echo "ERROR: Invalid argument!"
+		echo "ERROR: Invalid argument(s)!"
 	fi
 }
 
@@ -55,7 +55,7 @@ function gerrit-push {
 		fi
 		git push ssh://axxx007xxxz@review.xosp.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
 	else
-		echo "ERROR: Invalid argument!"
+		echo "ERROR: Invalid argument(s)!"
 	fi
 }
 
@@ -63,7 +63,7 @@ function upload-afh {
 	username=axxx007xxxz
 	password=thisisnotmypassword
 	if [ ! $1 ]; then
-		echo "ERROR: Invalid argument!"
+		echo "ERROR: Invalid argument(s)!"
 		exit
 	fi
 	curl -u $username:$password -T $1 ftp://uploads.androidfilehost.com
