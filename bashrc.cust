@@ -42,16 +42,16 @@ function prepare-build-environment {
 function gerrit-push {
 	if [[ $1 == candy ]]; then
 		if [ $2 ]; then
-			branch=$2
+			local branch=$2
 		else
-			branch=c7.1.2
+			local branch=c7.1.2
 		fi
 		git push ssh://axxx007xxxz@gerrit.bbqdroid.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
 	elif [[ $1 == xosp ]]; then
 		if [ $2 ]; then
-			branch=$2
+			local branch=$2
 		else
-			branch=xosp-n
+			local branch=xosp-n
 		fi
 		git push ssh://axxx007xxxz@review.xosp.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
 	else
@@ -60,8 +60,8 @@ function gerrit-push {
 }
 
 function upload-afh {
-	username=axxx007xxxz
-	password=thisisnotmypassword
+	local username=axxx007xxxz
+	local password=thisisnotmypassword
 	if [ ! $1 ]; then
 		echo "ERROR: Invalid argument(s)!"
 		exit
