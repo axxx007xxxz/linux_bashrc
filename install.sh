@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $(whoami) != root ]; then
+if [ $UID != 0 ]; then
 	echo "ERROR: You must run this script as root!"
 	exit
 fi
