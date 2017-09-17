@@ -1,3 +1,4 @@
 This repository contains "bashrc" configuration files which I use on my system.
 
 For installing (on Fedora), run 'install.sh' file with administrator privileges.
+In case you want to overwrite "bashrc.cust.priv" file, use '-f' or '--force' parameter.
