@@ -21,8 +21,8 @@ man() {
 
 
 # Variables
-export GROFF_NO_SGR=1
-export USE_CCACHE=1
+export GROFF_NO_SGR="1"
+export USE_CCACHE="1"
 
 
 # Aliases
@@ -34,10 +34,10 @@ alias reposync='repo sync --force-sync -f --no-clone-bundle -c --no-tags -j 4'
 
 # Functions
 function prepare-build-environment {
-	if [[ $1 == candy ]]; then
-		export CANDY_BUILD_TYPE=OFFICIAL
-	elif [[ $1 == xenonhd ]]; then
-		export OTA_TYPE=Official
+	if [[ $1 == "candy" ]]; then
+		export CANDY_BUILD_TYPE="OFFICIAL"
+	elif [[ $1 == "xenonhd" ]]; then
+		export OTA_TYPE="Official"
 	else
 		echo "ERROR: Invalid argument(s)!"
 	fi
@@ -45,18 +45,18 @@ function prepare-build-environment {
 
 function gerrit-push {
 	import-accountinformations-gerrit-push
-	if [[ $1 == candy ]]; then
+	if [[ $1 == "candy" ]]; then
 		if [ $2 ]; then
-			local branch=$2
+			local branch="$2"
 		else
-			local branch=c7.1.2
+			local branch="c7.1.2"
 		fi
 		git push ssh://$username@gerrit.bbqdroid.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
-	elif [[ $1 == xosp ]]; then
+	elif [[ $1 == "xosp" ]]; then
 		if [ $2 ]; then
-			local branch=$2
+			local branch="$2"
 		else
-			local branch=xosp-n
+			local branch="xosp-n"
 		fi
 		git push ssh://$username@review.xosp.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
 	else

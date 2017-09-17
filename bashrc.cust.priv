@@ -2,11 +2,11 @@
 
 # Account for 'gerrit-push'
 function import-accountinformations-gerrit-push {
-	local username=axxx007xxxz
+	local username="axxx007xxxz"
 }
 
 # Account for 'upload-afh'
 function import-accountinformations-upload-afh {
-	local username=axxx007xxxz
-	local password=thisisnotmypassword
+	local username="axxx007xxxz"
+	local password="thisisnotmypassword"
 }
