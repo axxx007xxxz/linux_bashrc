@@ -37,6 +37,16 @@ function cust-error {
 	echo "ERROR: Invalid argument(s)!"
 }
 
+function split-cue {
+	if [ $3 ]; then
+		local codec="$3"
+	else
+		local codec="flac"
+	fi
+	shnsplit -f $1 $2 -o $codec -t "%n - %t"
+	cuetag.sh $1 *.$codec
+}
+
 function prepare-build-environment {
 	if [[ $1 == "candy" ]]; then
 		export CANDY_BUILD_TYPE="OFFICIAL"
