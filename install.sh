@@ -11,5 +11,5 @@ sleep 3
 echo ""
 cp bashrc /etc/bashrc && chmod 644 /etc/bashrc
 cp bashrc.cust /etc/bashrc.cust && chmod 644 /etc/bashrc.cust
-if [[ $1 = -f || $1 = --force  || ! -f /etc/bashrc.cust.priv ]]; then cp bashrc.cust.priv /etc/bashrc.cust.priv && chmod 644 /etc/bashrc.cust.priv; fi
+if [[ $1 = -f || $1 = --force  || ! -f /etc/bashrc.cust.priv ]]; then cp bashrc.cust.priv /etc/bashrc.cust.priv && chmod 644 /etc/bashrc.cust.priv; else echo "WARNING: Skipping bashrc.cust.priv."; fi
 echo "Done."
