@@ -33,13 +33,17 @@ alias reposync='repo sync --force-sync -f --no-clone-bundle -c --no-tags -j 4'
 
 
 # Functions
+function cust-error {
+	echo "ERROR: Invalid argument(s)!"
+}
+
 function prepare-build-environment {
 	if [[ $1 == "candy" ]]; then
 		export CANDY_BUILD_TYPE="OFFICIAL"
 	elif [[ $1 == "xenonhd" ]]; then
 		export OTA_TYPE="Official"
 	else
-		echo "ERROR: Invalid argument(s)!"
+		cust-error
 	fi
 }
 
@@ -70,14 +74,14 @@ function gerrit-push {
 		fi
 		git push ssh://$username@review.xosp.org:29418/$project HEAD:refs/for/$branch
 	else
-		echo "ERROR: Invalid argument(s)!"
+		cust-error
 	fi
 }
 
 function upload-afh {
 	import-accountinformations-upload-afh
 	if [ ! $1 ]; then
-		echo "ERROR: Invalid argument(s)!"
+		cust-error
 		exit
 	fi
 	curl -u $username:$password -T $1 ftp://uploads.androidfilehost.com
