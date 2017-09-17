@@ -1,5 +1,8 @@
 # Custom configuration file
 
+# Include private accounts informations
+source /etc/bashrc.cust.priv
+
 # Bash colors
 PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\]"
 
@@ -41,28 +44,28 @@ function prepare-build-environment {
 }
 
 function gerrit-push {
+	import-accountinformations-gerrit-push
 	if [[ $1 == candy ]]; then
 		if [ $2 ]; then
 			local branch=$2
 		else
 			local branch=c7.1.2
 		fi
-		git push ssh://axxx007xxxz@gerrit.bbqdroid.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
+		git push ssh://$username@gerrit.bbqdroid.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
 	elif [[ $1 == xosp ]]; then
 		if [ $2 ]; then
 			local branch=$2
 		else
 			local branch=xosp-n
 		fi
-		git push ssh://axxx007xxxz@review.xosp.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
+		git push ssh://$username@review.xosp.org:29418/$(cat .git/config |grep "projectname" |cut -d " " -f 3) HEAD:refs/for/$branch
 	else
 		echo "ERROR: Invalid argument(s)!"
 	fi
 }
 
 function upload-afh {
-	local username=axxx007xxxz
-	local password=thisisnotmypassword
+	import-accountinformations-upload-afh
 	if [ ! $1 ]; then
 		echo "ERROR: Invalid argument(s)!"
 		exit
