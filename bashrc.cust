@@ -89,6 +89,7 @@ function gerrit-push {
 	else
 		cust-error
 	fi
+	unset username
 }
 
 function upload-afh {
@@ -98,4 +99,5 @@ function upload-afh {
 		exit
 	fi
 	curl -u $username:$password -T $1 ftp://uploads.androidfilehost.com
+	unset username password
 }
