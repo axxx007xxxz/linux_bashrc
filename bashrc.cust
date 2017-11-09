@@ -51,7 +51,7 @@ function prepare-build-environment {
 	if [[ $1 == "candy" ]]; then
 		export CANDY_BUILD_TYPE="OFFICIAL"
 	elif [[ $1 == "xenonhd" ]]; then
-		export OTA_TYPE="Official"
+		export OTA_TYPE="Experimental"
 	else
 		cust-error
 	fi
