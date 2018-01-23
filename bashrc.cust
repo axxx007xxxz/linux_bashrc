@@ -38,6 +38,7 @@ function cust-error {
 }
 
 function findall {
+	local files
 	for files in `find . -type f`; do
 		cat $files |grep -i "$*" && echo $files
 	done
