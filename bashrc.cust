@@ -37,6 +37,12 @@ function cust-error {
 	echo "ERROR: Invalid argument(s)!"
 }
 
+function findall {
+	for files in `find . -type f`; do
+		cat $files |grep -i "$*" && echo $files
+	done
+}
+
 function split-cue {
 	if [ $3 ]; then
 		local codec="$3"
