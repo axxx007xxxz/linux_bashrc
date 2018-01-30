@@ -37,7 +37,7 @@ function cust-error {
 	echo "ERROR: Invalid argument(s)!"
 }
 
-function findall {
+function findstring {
 	local files
 	for files in `find . -type f`; do
 		cat $files |grep -i "$*" && echo $files
