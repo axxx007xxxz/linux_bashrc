@@ -35,6 +35,7 @@ alias reposync='repo sync --force-sync -f --no-clone-bundle -c --no-tags -j 4'
 # Functions
 function cust-error {
 	echo "ERROR: Invalid argument(s)!"
+	exit 1
 }
 
 function findstring {
