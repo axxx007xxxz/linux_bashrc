@@ -104,7 +104,6 @@ function upload-afh {
 	import-accountinformations-upload-afh
 	if [ ! $1 ]; then
 		cust-error
-		exit
 	fi
 	curl -u $username:$password -T $1 ftp://uploads.androidfilehost.com
 	unset username password
