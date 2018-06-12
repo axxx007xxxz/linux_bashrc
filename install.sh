@@ -1,7 +1,7 @@
 #!/bin/bash
 if [[ $UID != "0" ]]; then
 	echo "ERROR: You must run this script as root!"
-	exit
+	exit 1
 fi
 
 echo "WARNING: This script is supposed to be used on Fedora only."
