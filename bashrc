@@ -96,3 +96,8 @@ if [ -z "$BASHRCSOURCED" ]; then
 
 fi
 # vim:ts=4:sw=4
+
+
+
+# Include customized configurations
+source /etc/bashrc.cust
