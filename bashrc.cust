@@ -4,3 +4,10 @@
 alias la='ls -A'
 alias dd='dd status=progress'
 alias nano='nano -L'
+
+
+# Functions
+function cust-error {
+	echo "ERROR: Invalid argument(s)!"
+	exit 1
+}
