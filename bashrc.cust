@@ -1,1 +1,6 @@
 # Custom configuration file
+
+# Aliases
+alias la='ls -A'
+alias dd='dd status=progress'
+alias nano='nano -L'
