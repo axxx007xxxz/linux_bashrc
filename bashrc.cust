@@ -11,3 +11,10 @@ function cust-error {
 	echo "ERROR: Invalid argument(s)!"
 	exit 1
 }
+
+function findstring {
+	local files
+	for files in `find . -type f`; do
+		cat $files |grep -i "$*" && echo $files
+	done
+}
