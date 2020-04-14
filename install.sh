@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+
+
 if [[ $UID != "0" ]]; then
 	echo "ERROR: You must run this script as root!"
 	exit 1
