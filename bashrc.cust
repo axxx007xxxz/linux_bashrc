@@ -22,6 +22,7 @@ man() {
 
 # Variables
 export GROFF_NO_SGR="1"
+export LESSHISTFILE=-
 export USE_CCACHE="1"
 
 
