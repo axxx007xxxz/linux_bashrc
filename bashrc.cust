@@ -32,7 +32,7 @@ alias dd='dd status=progress'
 alias grep='grep -i'
 alias nano='nano -L'
 alias repoinit='repo init --no-clone-bundle'
-alias reposync='repo sync --force-sync -f --no-clone-bundle -c --no-tags -j 4'
+alias reposync='repo sync --force-sync --no-clone-bundle -c --no-tags -j 4'
 
 
 # Functions
