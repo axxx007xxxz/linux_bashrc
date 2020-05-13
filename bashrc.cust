@@ -1,5 +1,9 @@
 # Custom configuration file
 
+# Variables
+export LESSHISTFILE=-
+
+
 # Aliases
 alias la='ls -A'
 alias dd='dd status=progress'
