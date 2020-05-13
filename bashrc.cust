@@ -17,14 +17,6 @@ function cust-error {
 	exit 1
 }
 
-function cust-i3lock {
-	local screenshot="$(mktemp --suffix ".png")"
-	import -window root ${screenshot}
-	convert ${screenshot} -scale 10% -scale 1000% ${screenshot}
-	i3lock -n -i ${screenshot}
-	rm ${screenshot}
-}
-
 function findstring {
 	local files
 	for files in `find . -type f`; do
