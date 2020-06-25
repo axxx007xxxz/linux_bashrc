@@ -33,6 +33,7 @@ alias nano='nano -L'
 alias repoinit='repo init --no-clone-bundle'
 alias reposync='repo sync --force-sync --no-clone-bundle -c --no-tags -j 4'
 alias sudo='sudo '
+alias wget='wget --hsts-file /dev/null'
 
 
 # Functions
