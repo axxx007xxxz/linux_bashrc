@@ -100,4 +100,6 @@ fi
 
 
 # Include customized configurations
-source /etc/bashrc.cust
+if [ "$PS1" = "[\u@\h \W]\\$ " ]; then
+	source /etc/bashrc.cust
+fi
