@@ -97,6 +97,11 @@ function gerrit-push {
 	unset username
 }
 
+function rwo {
+	"${@}"
+	history -d $((${HISTCMD}-1))
+}
+
 function upload-afh {
 	import-accountinformations-upload-afh
 	if [[ ! $1 ]]; then
