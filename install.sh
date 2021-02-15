@@ -7,7 +7,7 @@ if [[ $UID != "0" ]]; then
 	exit 1
 fi
 
-echo "WARNING: This script is supposed to be used on Fedora only."
+echo "INFO: This script is supposed to be used on Fedora only."
 echo "Pressing CTRL+C within three seconds will abort installation."
 sleep 3
 
