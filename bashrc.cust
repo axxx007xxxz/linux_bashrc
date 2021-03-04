@@ -97,7 +97,7 @@ function gerrit-push {
 	unset username
 }
 
-function rwo {
+function rwh {
 	"${@}"
 	history -d $((${HISTCMD}-1))
 }
