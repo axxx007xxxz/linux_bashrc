@@ -20,6 +20,10 @@ man() {
 }
 
 
+# Attibutes
+bind "set completion-ignore-case on"
+
+
 # Variables
 export LESSHISTFILE=-
 export USE_CCACHE="1"
