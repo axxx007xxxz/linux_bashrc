@@ -26,6 +26,7 @@ export USE_CCACHE="1"
 
 
 # Aliases
+alias c='cat'
 alias cat='bat -n'
 alias dd='dd status=progress'
 alias grep='grep --color=auto -i'
