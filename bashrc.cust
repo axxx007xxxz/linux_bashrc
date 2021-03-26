@@ -29,6 +29,7 @@ export USE_CCACHE="1"
 alias c='cat'
 alias cat='bat -n'
 alias dd='dd status=progress'
+alias e='nano'
 alias grep='grep --color=auto -i'
 alias l='ls'
 alias la='ls -A'
