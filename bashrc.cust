@@ -9,6 +9,7 @@ PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"(\[\033[0
 
 # Attibutes
 bind "set completion-ignore-case on"
+shopt -s autocd
 shopt -s checkjobs
 
 
